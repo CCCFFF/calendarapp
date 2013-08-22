@@ -27,8 +27,13 @@
         <a class="brand" href="/">Calendarapp</a>
         <div class="nav-collapse">
           <ul class="nav">
-
-            <li><%= link_to "Home", "/" %></li>
+            <% if current_user.present? %>
+            Hello <%= current_user.email %>
+            <li><%= link_to "#{current_user.email}", user_url(current_user.id)  %></li>
+            <li><%= link_to "Sign Out", session_url, method: "delete" %></li>
+            <% else %>
+            <li><%= link_to "Sign In", new_session_url %></li>
+            <% end %>
             <li><%= link_to "Users", "/users" %></li>
             <li><%= link_to "Events", "/events" %></li>
             <li><%= link_to "Invites", "/invites" %></li>
