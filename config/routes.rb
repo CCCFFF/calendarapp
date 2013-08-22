@@ -1,4 +1,6 @@
 Calendarapp::Application.routes.draw do
+  resources :invites
+
   resources :events
 
   resources :users
