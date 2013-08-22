@@ -1,0 +1,15 @@
+<h1>Sign In</h1>
+<div>
+  <%= form_tag session_url, method: "post" do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+</div>
+<div>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+</div>
+<div>
+  <%= submit_tag "Log On" %>
+
+</div>
+<% end %>

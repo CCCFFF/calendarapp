@@ -1,4 +1,9 @@
 Calendarapp::Application.routes.draw do
+
+get "/session/new" => "sessions#new", as: "new_session"
+post  "/session" => "sessions#create", as: "session"
+delete "/session" => "sessions#destroy"
+
   resources :invites
 
   resources :events
@@ -45,7 +50,7 @@ Calendarapp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
